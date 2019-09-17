@@ -23,11 +23,11 @@ for i=1:200
 
     Yold=YY;
     for num = 1:v1
-        Wv(num)=1/(2*norm(YY*YY'-Fv*Fv','fro'));
         Zv=ZV{num};
         xv=X{num};
         xv=xv';
         Fv=FV{num};
+         Wv(num)=1/(2*norm(YY*YY'-Fv*Fv','fro'));
         parfor ij=1:n
                d=distance(Fv,n,ij);
             Zv(:,ij)=B{num}*(xv'*xv(:,ij) - beta/4*d'); 
